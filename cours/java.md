@@ -47,3 +47,31 @@ public Etudiant (String n, int note1, int note2){
 - une instance de classe T (ie un objet de type T) est cree par la commande new
 - lorsquun objet nest plus referencie il est detruit par un processus asynchrone le _garbage collector_
 - pas de delete en java
+
+## association
+
+plusieurs objets peuvent collaborer pour realiser une tache
+
+- un groupe connait tous ses etudiants pour pouvoir calculer la moyenne dans un module donné. Un etudiant connait les modules quil suit
+- dans une interface une fenetre connait les elements qui la composent pour povoir se reafficher ou faire une bonne mise en page
+
+certains objets sont donc lies certains classes sont donc _associees_
+les associations ne sont pas forcements sympetriques
+
+### association I
+
+les associations de multiplicite 0 ou 1 se font simplement en introduisant un attribut du bon type
+
+### association II
+
+ecrire une methode qui calcule la masse salariale de la societe
+
+```
+public class Societe
+{
+	...
+	Employe[] mes_employes;
+}
+```
+
+agregation de reference par opposiotn agregation de valeur
