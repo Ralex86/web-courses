@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <style>
+	form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+    input[type='text'], input[type='date'] {
+      border-width: 1px;
+      border-right-color: green;
+      border-right-style: solid;
+      border-right-width: 5px;
+      margin-bottom: 10px;
+    }
+
+    input[required] {
+      border-right-color: red;
+    }
+
+    [required]::after {
+      color: red;
+      content: "(required)";
+    }
+  </style>
+</head>
+<body>
+  <form >
+    <label for='name'>Nom:<br>
+      <input id='name' type='text' name='name' required><br>
+    </label>
+    <label for='url'>URL:<br>
+      <input id='url' type='text' name='url' placeholder='http://'><br>
+    </label>
+    <label for='mail'>E-Mail:<br>
+      <input id='mail' type='text' name='mail' required><br>
+    </label>
+    <label for='birth-date'>Birth Date:<br>
+      <input id='birth-date' type='date' name='birth-date'><br>
+    </label>
+    <input title='Envoyer le formulaire' type='submit' value='Envoyer'>
+  </form>
+</body>
+</html>
