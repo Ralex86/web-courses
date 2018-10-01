@@ -21,8 +21,8 @@ types primitis = int float double char boolean
 ```java
 {
 	int a = 10; // déclaration et initialisation
-	a = a + b 	// operation
-}				// la variable a nexiste plus
+	a = a + b; // operation
+} // la variable a nexiste plus
 ```
 
 ## classe
@@ -33,7 +33,7 @@ public Etudiant (String n, int note1, int note2){
 	notes[0]=  note1;
 	notes[1] = note2;
 	... /// attributs
-	private int[] notes
+	private int[] notes;
 	public String nom;
 }
 ```
@@ -66,7 +66,7 @@ les associations de multiplicite 0 ou 1 se font simplement en introduisant un at
 
 ecrire une methode qui calcule la masse salariale de la societe
 
-```
+```java
 public class Societe
 {
 	...
@@ -75,3 +75,24 @@ public class Societe
 ```
 
 agregation de reference par opposiotn agregation de valeur
+
+## heritage
+
+relation dheritage => generalisation specilaisation
+
+en java cel secrit
+
+```class B extends A {
+...
+}
+```
+
+## exercice 1
+
+compilation
+
+```bash
+javac *.java -cp ./unit-4.10.jar
+java Main
+java Executable
+```
