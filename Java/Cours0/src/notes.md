@@ -78,3 +78,13 @@ quand deux classes partagent des methodes qui ont le meme nom on parle de _polym
         System.out.println("J'ai si faim!!!...Donne-moi des algues!");
     }
 ```
+
+## attributs protected
+
+attributs accessibles par la classe meme et les classes filles
+
+## Divers
+
+- Navigabilite, UML, merise
+- `arrayList` est une structure de donnee tres utilisee en Java, cest un _tableau dynamique_, sa taille est dynamique
+- `hmap` est une sorte de tableau cles/valeurs
