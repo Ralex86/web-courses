@@ -112,3 +112,22 @@ blockchain = livre de compte
 - reseaux sociaux oartager ses donnes sans passer par les serveurs
 - actes notaries; plus de coutes de conservation pour les notaires
   sante: doroits dauteurs, smart contrats, consentement partenaire sexuel
+
+## Vie privee et internet
+
+Oui il y a une surveillance de masse
+
+- la majorite du soft est americain mais pas le hardware
+- tout le monde espionne tout le monde
+- la theorie de laiguille dans la botte de fon
+- letat francais sest dote de Palantir: sert a croiser les donnes (messages vocaux, mails, geolocs, sms) pour etablir des hierarchies, analyser des emeutes, flux financiers
+  => les ecoutes passent par les serveurs americains (solution dans le cloud)
+
+## Loi de surveillance
+
+liberte dexpression
+
+# Inteligence artificielle
+
+relire les slides sur upqwast et accessibilite
+on sera evalue la dessus
