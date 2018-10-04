@@ -94,8 +94,7 @@ que fournir au webdesigner
 - objectif
 - ton
 
-| Contexte                                 | cible                         | objectif           | ton                                   |
-| ---------------------------------------- | ----------------------------- | ------------------ | ------------------------------------- |
-| la cave a vin de la cite du vins         | touristes et amateurs de vins | vendre du vin      | mise en situation avec photos du lieu |
-| faire decouvrir des vins du monde entier |                               | cave • bar • snack |                                       |
-| ---------------------------------------- | ----------------------------- | ------------------ | ------------------------------------- |
+| Contexte                                 | cible                         | objectif           | ton                                               |
+| ---------------------------------------- | ----------------------------- | ------------------ | ------------------------------------------------- |
+| la cave a vin de la cite du vins         | touristes et amateurs de vins | vendre du vin      | mise en situation avec photos du lieu             |
+| faire decouvrir des vins du monde entier |                               | cave • bar • snack | dore seduction vis a vis de la clientele chinoise |
