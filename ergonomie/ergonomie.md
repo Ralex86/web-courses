@@ -98,3 +98,15 @@ que fournir au webdesigner
 | ---------------------------------------- | ----------------------------- | ------------------ | ------------------------------------------------- |
 | la cave a vin de la cite du vins         | touristes et amateurs de vins | vendre du vin      | mise en situation avec photos du lieu             |
 | faire decouvrir des vins du monde entier |                               | cave • bar • snack | dore seduction vis a vis de la clientele chinoise |
+
+# projet e commerce
+
+## structuration et presentation de loffre
+
+la maquette du site doit
+
+- vehiculer votre image de marque
+- tenior compte des scenarios de viste les plus probables
+- repondre ou parler a vos clients
+- surtout etre egronomique
+- un joli site cest bien mais un site qui vend cest mieux
