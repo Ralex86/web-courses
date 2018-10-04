@@ -98,3 +98,4 @@ que fournir au webdesigner
 | ---------------------------------------- | ----------------------------- | ------------------ | ------------------------------------- |
 | la cave a vin de la cite du vins         | touristes et amateurs de vins | vendre du vin      | mise en situation avec photos du lieu |
 | faire decouvrir des vins du monde entier |                               | cave • bar • snack |                                       |
+| ---------------------------------------- | ----------------------------- | ------------------ | ------------------------------------- |
