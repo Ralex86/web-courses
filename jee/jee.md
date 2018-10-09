@@ -48,6 +48,7 @@ respecter les mm normes
 |                       |                         | JNDI                 |                       |
 |                       |                         | JMS                  |                       |
 | --------------------- | ----------------------- | -------------------- | --------------------- |
+| --------------------- | ----------------------- | -------------------- | --------------------- |
 | applications Java     | EJB entite              |
 |                       | EJB session             |
 |                       | EJB message             |
@@ -191,4 +192,157 @@ show databases;
 
 ```sql
 use [table_name];
+```
+
+## exo
+
+prof: rajouter des memos
+
+moi: operations sur les animaux, un veterinaire soccupe dun animal
+
+```sql
+CREATE DATABASE IF NOT EXISTS petclinic;
+
+USE petclinic;
+
+CREATE TABLE IF NOT EXISTS vets (
+  id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  first_name VARCHAR(30),
+  last_name VARCHAR(30),
+  INDEX(last_name)
+) engine=InnoDB;
+
+CREATE TABLE IF NOT EXISTS specialties (
+  id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(80),
+  INDEX(name)
+) engine=InnoDB;
+
+CREATE TABLE IF NOT EXISTS vet_specialties (
+  vet_id INT(4) UNSIGNED NOT NULL,
+  specialty_id INT(4) UNSIGNED NOT NULL,
+  FOREIGN KEY (vet_id) REFERENCES vets(id),
+  FOREIGN KEY (specialty_id) REFERENCES specialties(id),
+  UNIQUE (vet_id,specialty_id)
+) engine=InnoDB;
+
+CREATE TABLE IF NOT EXISTS types (
+  id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(80),
+  INDEX(name)
+) engine=InnoDB;
+
+CREATE TABLE IF NOT EXISTS owners (
+  id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  first_name VARCHAR(30),
+  last_name VARCHAR(30),
+  address VARCHAR(255),
+  city VARCHAR(80),
+  telephone VARCHAR(20),
+  INDEX(last_name)
+) engine=InnoDB;
+
+CREATE TABLE IF NOT EXISTS pets (
+  id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(30),
+  birth_date DATE,
+  type_id INT(4) UNSIGNED NOT NULL,
+  owner_id INT(4) UNSIGNED NOT NULL,
+  INDEX(name),
+  FOREIGN KEY (owner_id) REFERENCES owners(id),
+  FOREIGN KEY (type_id) REFERENCES types(id)
+) engine=InnoDB;
+
+CREATE TABLE IF NOT EXISTS visits (
+  id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  pet_id INT(4) UNSIGNED NOT NULL,
+  visit_date DATE,
+  description VARCHAR(255),
+  FOREIGN KEY (pet_id) REFERENCES pets(id)
+) engine=InnoDB;
+```
+
+## rappel MCV merise
+
+entite, relation, association
+on lit lentite puis sa relation par rapport a une autre entite
+one to one relationship: 1:1
+
+## diagramme de classe
+
+navigabilite = a partir dune classe on accede a une autre classe
+chaque classe est une table
+on met les attributs et la navigabilite dans le diagramme
+
+un memo concerne un seul veterinaire mais un veterinaire peut avoir plusieurs memos
+dans memo => navigabilite vers vet
+dans vet => navigabilite vers memos
+
+## Cardinalite
+
+- Many to one: plusieurs memos pour un seul veterinaire
+  plusieurs mos vers un seul veterinaires
+  jointure se fait avec la foreign key `vet_id`
+  => le mapping: comment je relie mes classes
+
+le constructeur initialise la date
+
+getteur et setteur
+
+```java
+    public List<Memo> getMemos() {
+        List<Memo> sortedMemos = new ArrayList<Memo>(getMemosInternal());
+        PropertyComparator.sort(sortedMemos, new MutableSortDefinition("date", false, false));
+        return Collections.unmodifiableList(sortedMemos);
+    }
+```
+
+- Many to many: pour les specialites
+
+une operation: un animal, un veto, une date, une description
+une classe operation avec attribut
+
+### Table Operation
+
+```sql
+CREATE TABLE IF NOT EXISTS operations (
+  id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  vet_id INT(4) UNSIGNED NOT NULL,
+  pet_id INT(4) UNSIGNED NOT NULL,
+  operation_date DATE,
+  description VARCHAR(80),
+  FOREIGN KEY (vet_id) REFERENCES vets(id)
+) engine=In
+```
+
+### Classe Operation
+
+```
+public class Operation extends BaseEntity{
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "vet", fetch = FetchType.EAGER)
+    private Set<Operation> operations;
+
+	protected void setOperationsInternal(Set<Operation> operations) {
+        this.operations = operations;
+    }
+
+    protected Set<Operations> getOperationsInternal() {
+        if (this.operations == null) {
+            this.operations = new HashSet<Operation>();
+        }
+        return this.operations;
+    }
+
+
+    public List<Operation> getOperations() {
+        List<Operation> sortedOperations = new ArrayList<Operation>(getOperationsInternal());
+        PropertyComparator.sort(sortedOperations, new MutableSortDefinition("date", false, false));
+        return Collections.unmodifiableList(sortedOperations);
+    }
+
+    public void addOperations(Operation operation) {
+        getMemosInternal().add(memo);
+        memo.setVet(this);
+    }
+}
 ```
