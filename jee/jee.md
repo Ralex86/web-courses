@@ -319,30 +319,22 @@ CREATE TABLE IF NOT EXISTS operations (
 
 ```java
 public class Operation extends BaseEntity{
-	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "vet", fetch = FetchType.EAGER)
-    private Set<Operation> operations;
+	@ManyToOne(cascade = CascadeType.ALL, mappedBy = "vets??")
+		// date
+		// pet objet
+		// vet objet
+}
 
-	protected void setOperationsInternal(Set<Operation> operations) {
-        this.operations = operations;
-    }
-
-    protected Set<Operations> getOperationsInternal() {
-        if (this.operations == null) {
-            this.operations = new HashSet<Operation>();
-        }
-        return this.operations;
-    }
+public class Pet  extends BaseEntity{
+		// Liste doperations
+		@OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+}
 
 
-    public List<Operation> getOperations() {
-        List<Operation> sortedOperations = new ArrayList<Operation>(getOperationsInternal());
-        PropertyComparator.sort(sortedOperations, new MutableSortDefinition("date", false, false));
-        return Collections.unmodifiableList(sortedOperations);
-    }
-
-    public void addOperations(Operation operation) {
-        getOperationsInternal().add(operation);
-        operation.setVet(this);
-    }
+public class Vet  extends BaseEntity{
+		// Liste doperations
+		@OneToMany(cascade = CascadeType.ALL, mappedBy = "vet")
 }
 ```
+
+### Ecriture des tests
