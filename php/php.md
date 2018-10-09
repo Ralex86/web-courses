@@ -180,3 +180,26 @@ else
 ```
 
 stocker des cles valeurs sur le navigateur
+
+effacer les cookies
+
+```php
+<?php
+
+// Pour supprimer un cookie, vous devez indiquer
+// une date d'expiration dans le passé et utiliser
+// une chaîne vide ou false en tant que valeur
+setcookie('seen', false, time()-3600);
+```
+
+> Attention: `setcookie()` comme `header()` doit etre appele avant tout envoi de donnee
+
+> Attention: n'ayez pas confiance en les valeurs que vous obtenez dans le tableau `$_COOKIE`, il peut contenir tout ce que l'utilisateur souhaite. En effet, même si le serveur les définit, ils sont stockés en clair et modifiable à volonté par le client.
+
+## Les session
+
+Problème: créer un système d'identification ?
+Principe des sessions:
+
+- "Jeton" de sécurité: `sessid`
+- Base de donnée ou fichiers coté serveur
