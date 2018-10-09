@@ -40,19 +40,19 @@ respecter les mm normes
 
 ## architecture JEE
 
-|                       | Serveur dapplication    |                      |                       |
-| --------------------- | ----------------------- | -------------------- | --------------------- |
-| navigateur internet   | JSP Servlets            | JTA                  | Annuaire              |
-|                       | Conteneur Web           | JPA                  | SGBD                  |
-|                       | Serveur internet        | JDBC                 |                       |
-|                       |                         | JNDI                 |                       |
-|                       |                         | JMS                  |                       |
-| --------------------- | ----------------------- | -------------------- | --------------------- |
-| --------------------- | ----------------------- | -------------------- | --------------------- |
-| applications Java     | EJB entite              |
-|                       | EJB session             |
-|                       | EJB message             |
-|                       | Conteneur dEJBS         |
+|                     | Serveur dapplication |      |          |
+| ------------------- | -------------------- | ---- | -------- |
+| navigateur internet | JSP Servlets         | JTA  | Annuaire |
+|                     | Conteneur Web        | JPA  | SGBD     |
+|                     | Serveur internet     | JDBC |          |
+|                     |                      | JNDI |          |
+|                     |                      | JMS  |          |
+|                     |                      |      |          |
+|                     |                      |      |          |
+| applications Java   | EJB entite           |
+|                     | EJB session          |
+|                     | EJB message          |
+|                     | Conteneur dEJBS      |
 
 JSP: Java => du Html
 Servlets intercepte une requete HTTP
@@ -360,5 +360,36 @@ public class OwnerTests {
         assertEquals(fido, owner.getPet("fido"));
     }
 
+}
+```
+
+test unitaire de `addMemo`
+
+```java
+  public void addMemo(Memo memo) {
+        getMemosInternal().add(memo);
+        memo.setVet(this);
+    }
+```
+
+```java
+/**
+ * JUnit test for the {@link Vet} class.
+ */
+public class VetTests {
+	@Test
+	@Transactional
+	public void testAddMemo() {
+		// on commence par tester un objet de la classe courrante
+		Vet vet = new Vet();
+
+		// on cree un objet memo
+		Memo memo = new Memo();
+
+		assertTrue(vet.getMemos().size == 0);
+		vet.addMemo(memo);
+		assertTrue(vet.getMemos().size == 1);
+		assertEquals(vet.getMemo(0), memo);
+	}
 }
 ```
