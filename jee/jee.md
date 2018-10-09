@@ -40,18 +40,18 @@ respecter les mm normes
 
 ## architecture JEE
 
-| Serveur dapplication
-|---------------------|-----------------------|--------------------|---------------------|
-| navigateur internet | JSP Servlets | JTA | Annuaire |
-| | Conteneur Web | JPA | SGBD |
-| | Serveur internet | JDBC | |
-| | | JNDI | |
-| | | JMS | |
-|---------------------|-----------------------|--------------------|---------------------|
-| applications Java | EJB entite |
-| | EJB session |
-| | EJB message |
-| | Conteneur dEJBS |
+|                       | Serveur dapplication    |                      |                       |
+| --------------------- | ----------------------- | -------------------- | --------------------- |
+| navigateur internet   | JSP Servlets            | JTA                  | Annuaire              |
+|                       | Conteneur Web           | JPA                  | SGBD                  |
+|                       | Serveur internet        | JDBC                 |                       |
+|                       |                         | JNDI                 |                       |
+|                       |                         | JMS                  |                       |
+| --------------------- | ----------------------- | -------------------- | --------------------- |
+| applications Java     | EJB entite              |
+|                       | EJB session             |
+|                       | EJB message             |
+|                       | Conteneur dEJBS         |
 
 JSP: Java => du Html
 Servlets intercepte une requete HTTP
@@ -181,6 +181,14 @@ ensemble de classe dans un fichier `.jar` = archive de code java
 
 ## commandes pour le serveur SGBD
 
-`mysql -u root -p`
-`show databases;`
-`use [table_name]`
+```bash
+mysql -u root -p
+```
+
+```sql
+show databases;
+```
+
+```sql
+use [table_name];
+```
