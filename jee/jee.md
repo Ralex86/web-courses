@@ -320,21 +320,45 @@ CREATE TABLE IF NOT EXISTS operations (
 ```java
 public class Operation extends BaseEntity{
 	@ManyToOne(cascade = CascadeType.ALL, mappedBy = "vets??")
-		// date
-		// pet objet
-		// vet objet
+	// date
+	// pet objet
+	// vet objet
 }
 
 public class Pet  extends BaseEntity{
-		// Liste doperations
-		@OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+	// Liste doperations
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
 }
 
 
 public class Vet  extends BaseEntity{
-		// Liste doperations
-		@OneToMany(cascade = CascadeType.ALL, mappedBy = "vet")
+	// Liste doperations
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "vet")
 }
 ```
 
 ### Ecriture des tests
+
+test unitaire = test des classes => pour chaque methode
+
+```java
+/**
+ * JUnit test for the {@link Owner} class.
+ */
+public class OwnerTests {
+
+    @Test
+    @Transactional
+    public void testHasPet() {
+        Owner owner = new Owner();
+        Pet fido = new Pet();
+        fido.setName("Fido");
+        assertNull(owner.getPet("Fido"));
+        assertNull(owner.getPet("fido"));
+        owner.addPet(fido);
+        assertEquals(fido, owner.getPet("Fido"));
+        assertEquals(fido, owner.getPet("fido"));
+    }
+
+}
+```
