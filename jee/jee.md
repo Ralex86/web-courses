@@ -393,3 +393,7 @@ public class VetTests {
 	}
 }
 ```
+
+rajouter des classes dans le modele
+
+prochaine fois couche DAO
