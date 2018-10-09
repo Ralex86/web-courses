@@ -341,8 +341,8 @@ public class Operation extends BaseEntity{
     }
 
     public void addOperations(Operation operation) {
-        getMemosInternal().add(memo);
-        memo.setVet(this);
+        getOperationsInternal().add(operation);
+        operation.setVet(this);
     }
 }
 ```
