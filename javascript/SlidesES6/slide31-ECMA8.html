@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>cours JS</title>
+<script type="application/javascript" language="javascript">
+class Dog {
+	bark() {
+		console.log("wouf wouf");
+	}
+	growl() {
+		console.log("gggrrr");
+	}
+}
+class Doberman extends Dog {
+	constructor() {
+    	super();
+    }
+    growl() {
+    	super.growl();
+    	console.log("ggggggggggggrrrrrrrrrrrr");
+    }
+}
+function start(){
+	var pippa = new Dog();
+	var rufus = new Doberman(); 
+	rufus.bark();
+	pippa.bark();
+	rufus.growl();
+	pippa.growl();
+
+	console.log (rufus instanceof Doberman); // returns true
+	console.log (rufus instanceof Dog); // returns true 
+	console.log (pippa instanceof Doberman); //  returns false
+	console.log (pippa instanceof Dog); // returns true 
+	
+}
+</script>
+
+</head>
+<body onload="start();"> 
+
+</body>
+</html>

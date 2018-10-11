@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>cours JS</title>
+<script type="application/javascript" language="javascript">
+
+class Person {
+	//constructeur
+	constructor(name){
+		this._name=name;
+		this.friends= ["Seb", "Fred"];
+	}
+	//  accesseur propriété
+	get sayName (){
+		return this._name;
+	}
+	// mutateur propriété
+	set changeName(name) {
+		this._name = name;
+	}
+	// méthodes
+    addFriend(name) {
+		this.friends.push(name);
+	}
+	viewFriends() {
+		return this.friends;
+	}
+}
+
+function start(){
+	var p1=new Person("Nicholas");
+	var p2=new Person("Greg");
+
+	console.log(p2.sayName);
+	p1.changeName = "Franck";	
+	console.log(p1.sayName);
+	
+	p1.addFriend("Ed");
+	console.log(p1.viewFriends());
+	console.log(p2.viewFriends());
+}
+</script>
+
+</head>
+<body onload="start();"> 
+
+</body>
+</html>

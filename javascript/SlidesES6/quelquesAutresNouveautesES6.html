@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>quelques autres nouveautés ES6</title>
+</head>
+<body>
+	
+	<script type="application/javascript" language="javascript">
+		// cf différents sites trouvés sur le web...
+		// www.wanadev.fr, es6.features.org, ...
+		// constantes ("immutable variable")
+		
+		{
+			const Pi = 3.1415;
+			//Pi++; error assignment to constant variable
+			console.log (Pi);
+		}
+		// intuitive and flexible assignment via array
+		{
+			let a = 1;
+			let b = 2;
+			[a , b] = [b , a ];
+			console.log(a);
+			console.log(b);
+		}
+		{
+			var tab= [ 1, 2, 3];
+			let [a , , b] = tab;
+			console.log(a);
+			console.log(b);
+		}
+		// template string : evaluation de variables à l'intérieur d'une chaine
+		{
+			let me= "Yannick";
+			let age= 29;
+			let result =`Je suis ${me} et j'ai ${age} ans`;
+			console.log(result);
+			// pas de "bind"
+			age = 44;
+			console.log(result);
+		}
+		// valeur par défaut des parametres
+		{
+			let compute = function( x = 1, y = 1) {
+				return x+2*y;
+			}
+			console.log(compute(3,5));
+			console.log(compute(3));
+			console.log(compute());
+		}
+		// itérer sur un tableau
+		{
+			let languages = ["C","C++","PHP","C#"];
+			for (let language of languages) {
+				console.log(language);
+			}
+			for (let [index, language] of languages.entries()) {
+				console.log(`indice: ${index}  valeur: ${language}`);
+			}
+		}
+		// fonction lambda
+		{
+			let arr = [1,2,3];
+			//avant:
+			let squares_1 = arr.map(function(x) {return x * x});
+			console.log(squares_1);
+			// avec =>
+			let squares_2 = arr.map( x => x * x);
+			console.log(squares_2);
+		}
+		// module : export/import
+		{
+			
+			//import {sum} from './utility.js';
+			
+			//console.log(sum(3,4));
+			//console.log(utils.Pi);
+		}
+		
+	</script>
+</body>
+</html>
