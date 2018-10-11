@@ -145,3 +145,100 @@ class Person {
   }
 }
 ```
+
+pas besoin de mettre des parenthes pour les assesseurs
+en fait la notion de classe en ECMAscript6 est un _sucre syntaxique_ par dessus la notion de _prototype_
+
+la notion de prototype
+chaque objet peut avoir ses propres methodes et attributs
+mais on peut avoir des methodes et des attributs communs entre ces objets
+
+> sil y a conflit entre deux declarations dans le prototype et lobjet, cest la declaration de lobjet qui gagne sur celle du prototype
+
+## heritage
+
+- avant 2015 il etait assez difficile de faire de lheritage neanmoins cetait possible
+- maintenant on peut utiliser `extends`
+- `super` permet dutiliser le constructeur de la classe parente
+- polymorphisme possible pour specialiser les methodes de fonctions "heritieres"
+
+## Les tableaux
+
+> Different des tableaux dans les autres languages
+
+- les talbeaux sont dynamiques, on peut rajouter des elements a la volée
+
+`every`, `forEach`, `filter` => methodes sur les tableaux
+
+# Exercice
+
+Ecrire une classe personnes, un nom, date, liste damis
+
+## le DOM
+
+comprendre le DOM et sa hierarchie de noeuds
+le navigateur gere un arbre
+
+les noeuds ont un attribut qui leur permet de remonter vers le pere (`parent node`), les fils (`next childs`), les freres (`siblings`)
+
+acceder a un noeud dans le DOM => `getElementById`
+on peut remonter au pere, a ses enfants en utilisant les attributs/methodes predefinis
+
+on peut aussi ajouter des noeuds, de destruction de noeuds
+
+creer un text Node
+
+```javascript
+var node = document.createTextNode('Hello world');
+
+var node = document.createTextNode('Hellow World');
+var p1 = document.getElementById('p1');
+p1.appendChild(node);
+```
+
+```html
+<p id="p1"> </p>
+```
+
+By tagName ??
+
+> `document.getElementsByTagName("tagName");`
+
+Fonction qui permet de selectionner un certain type de selecteur CSS:
+
+```html
+<script>
+	var nodeListe = document.querySelectorAll("p+p img"); alert(nodeListe.length);
+	alert(nodeListe[1].alt);
+</script>
+<body>
+	<p> <img class="tableau" alt="l’atelier du peintre" src=" http://urlz.fr/TnT"/> </p>
+	<p> <img class="tableau" alt ="la truite" src="http://urlz .fr/TnU"/> </p>
+	<p> <img class="photo" alt = "photo Gustave Courbet" src=" http://urlz.fr/TnX"/> </p>
+</body>
+```
+
+## Exercice
+
+exo sur les drapeaux avec mouseover
+
+```javascript
+function flag(type) {
+  if (type == 0) {
+    var node = document.getElementById('testbox');
+    node.firstChild.nodeValue =
+      "Bienvenue. Passez la souris sur l'un des deux liens!";
+    node.style.backgroundImage = null;
+  }
+  if (type == 1) {
+    var node = document.getElementById('testbox');
+    node.firstChild.nodeValue = null;
+    node.style.backgroundImage = "url('english.jpg')";
+  }
+  if (type == 2) {
+    var node = document.getElementById('testbox');
+    node.firstChild.nodeValue = null;
+    node.style.backgroundImage = "url('french.gif')";
+  }
+}
+```
