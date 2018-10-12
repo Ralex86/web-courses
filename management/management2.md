@@ -32,7 +32,6 @@ finalite => presenter linformation afin que le visiteur de votre puisse le parco
 | nos engagements | cheminees, inserts, foyer |   Ramonage   |              |        VERMONT-CASTINGS |
 |                 |                           |              |              |                  HERGOM |
 |                 |                           |              |              |                  SEGUIN |
-|                 |                           |              |              |                         |
 
 - presentation
 - nos competences
