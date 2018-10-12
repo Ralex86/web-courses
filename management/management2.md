@@ -25,13 +25,14 @@ finalite => presenter linformation afin que le visiteur de votre puisse le parco
 - nommer la catgeorie
   Contexte: site vitrine qui vend des cheminees
 
-| Infos generales |       Les produits        |   Services   |    Divers    | Les marques partenaires |
-| :-------------- | :-----------------------: | :----------: | :----------: | ----------------------: |
-| presentation    |      nouveautes 2014      | Installation | Accessoires  |                    HWAM |
-| nos competences |     peoles a granules     |    Design    | Consommables |                PIAZETTA |
-| nos engagements | cheminees, inserts, foyer |   Ramonage   |              |        VERMONT-CASTINGS |
-|                 |                           |              |              |                  HERGOM |
-|                 |                           |              |              |                  SEGUIN |
+| Infos generales   |       Les produits        |   Services   |    Divers    | Les marques partenaires |
+| :---------------- | :-----------------------: | :----------: | :----------: | ----------------------: |
+| presentation      |      nouveautes 2014      | Installation | Accessoires  |                    HWAM |
+| nos competences   |     peoles a granules     |    Design    | Consommables |                PIAZETTA |
+| nos engagements   | cheminees, inserts, foyer |   Ramonage   |              |        VERMONT-CASTINGS |
+| show-room         |                           |              |              |                  HERGOM |
+| financement       |                           |              |              |                  SEGUIN |
+| aides financieres |
 
 - presentation
 - nos competences
