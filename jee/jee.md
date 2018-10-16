@@ -397,3 +397,67 @@ public class VetTests {
 rajouter des classes dans le modele
 
 prochaine fois couche DAO
+
+16/10/2018
+
+- attention controle la prochaine fois
+- sur du code et definitions
+- one to many
+
+framework spring = biblitotheque logiciel, certaine structure a lapplication
+pourquoi important de normaliser structure dun projet => pour assurer maintenance derriere de lapplication
+respecter les mm normes et la mm facon de programmer
+
+## Termes important
+
+- _JSP_ = equivalent dun fichier php (fichier avec htmlt et au milieu du php) => html + java
+- _servlet_ = fichier `.java` ce sont des classes qui utilisent le protocole HTTP, capables de recevoir des requetes de type GET, POST
+-           = joue le role de _controlleur_
+  > necessite un serveur TOMCAT, qui ne comprend que le JAVA, chaque jsp est traduit en servlet.java
+- _EJB_ = (grosse partie de JEE) signifie entreprise java bean, composant quon peut acceder a distance/deployer a distance
+  type darchitecture (plusieurs serveur) : serveurs n-tiers, plusieurs services
+
+- _conteneur web_ = executer des JSP/serveur
+- _conteneur EJB_ = environement qui va permettre de compiler et executer les EJB (sur serveur EJB)
+- _API_ = le dev se concentre sur la partie metier, gestion des logs etc... (Application Programming Interface = interface de programmation dapplication) a destination du developpeur, interface = ensemble de fonction a disposition / on ne sait pas comment elles ont ete implementees
+  ex dAPI : JPA(Java Persitence API, persitence des donnees) JDBC (Java Database connectivity, assitance pour se connecter au SGBD avec un pilote) JNDI ( Java Naming Direcotory interface, permet de se connecter a un annuaire LDAP, permet de stocker informations dans un arbre par exemple infos sur utilisateurs)
+
+- _ORM_ = Object Relationnal Mapping (Hibernate, Doctrine en php) faire du mapping objet relationnel => faire de la persitence, on va supperposer la carte des objets avec la carte des tables de la base de données
+
+- _MAVEN_ = gestionnaire de dependances de modules, des bibliotheques listees dans le fichier `POMP.XML`, sert aussi a compiler le projet, le tester et le deployer => générer un fichier `.war`
+
+Data transfert object
+classes metiers
+motclés sous les liens => devient attribut dans la table opposée
+
+many to one = plusieurs memos vers un seul veterinaire
+
+un service a une specialite mais une specialite peut concernet plusieurs services
+
+DAO = Data access object
+=> classes qui permettent dacceder aux bases de donnees
+=> requetes SQLA
+
+## Spring: les repositories
+
+SpringDataJPA
+permet dutiliser differents SGBD ou systeme de bases de donnees non relationnelles type NoSQL
+JPA, Springdata
+
+interface
+implementation des interfaces
+
+@ = annotation pour le framework
+@repository => pour le framework spring
+jpql langage propre a jpa => on appele des classes avec des objets
+
+```java
+@Repository
+@PersitenceContex
+@Autowired
+```
+
+au dessus attribut ou constructeur, lobjet est cree automatiquement par le framework Spring grace a linversion de controle
+injection de dependance
+
+pour implementer les services ons se base sur les repositories
