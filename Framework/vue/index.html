@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Index</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+		</script>
+		<style type="text/css" media="screen">
+				body{
+				font-family: Helvetica, Arial, Sans-Serif;
+				}
+
+				table {
+				border-collapse: collapse;
+				width: 100%;
+				}
+
+				th, td {
+				text-align: left;
+				padding: 8px;
+				}
+
+				tr {
+					display: flex;
+				}
+
+				tr th, tr td {
+				 flex: 1;
+				}
+
+				tr:nth-child(even){background-color: #f2f2f2}
+
+				th {
+				background-color: #4CAF50;
+				color: white;
+				}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!--<h1>-->
+			<!--{{ message }}-->
+			<!--</h1>-->
+
+			<!--<span v-bind:title="message">{{message}}</span>-->
+
+			<!--<p v-if="display">Paragraphe</p>-->
+
+			<!--<h1>{{counter}}</h1> <button v-on:click="increment">Incrementer</button>-->
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Titre</th>
+						<th scope="col">Date de sortie</th>
+						<th scope="col">Realisateur</th>
+						<th scope="col">Synopsis</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<movie-item :movie="movie" v-for="(movie,index) in filteredMovies" v-bind:key="index">
+						</movie-item>
+					</tr>
+				</tbody>
+						
+			</table>
+			<input type="text" placeholder="Chercher un film" v-model="search" />
+
+		</div>
+		<script src="index.js">
+		</script>
+	</body>
+</html>
